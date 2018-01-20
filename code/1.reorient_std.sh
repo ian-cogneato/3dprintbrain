@@ -9,19 +9,19 @@
 	# ./1.reorient_std.sh
 #-----------------------------------------------------------------------#
 
-export source_dir=../sourcedata
-export deriv_dir=../derivatives
+export source_dir = ../sourcedata
+export deriv_dir = ../derivatives
 export subj = sub-101
 
 # copy & reorient anat scan per subj (MPRAGE)
-fslreorient2std ${source_dir}/{subj}/${subj}_T1w.nii ${deriv_dir}/${subj}/${subj}_rec-reorient_T1w
+fslreorient2std ${source_dir}/${subj}/${subj}_T1w.nii ${deriv_dir}/${subj}_T1w.nii
 
 # Brain Extraction for anatomical scan
-bet ${analysis_dir}/Anat/2112/CJ2_2112_anat.nii.gz  ${analysis_dir}/Anat/2112/anat_2112_brain.nii.gz -f 0.5 -g 0
+bet ${deriv_dir}/${subj}_T1w.nii ${deriv_dir}/${subj}_brain.nii -f 0.5 -g 0
 
 # Check orientation for FSL: facing up & right
-fsleyes ${analysis_dir}/Anat/2112/CJ2_2112_anat.nii.gz
-fsleyes ${analysis_dir}/Anat/2112/anat_2112_brain.nii.gz
+fsleyes ${analysis_dir}/${subj}_T1w.nii
+fsleyes ${analysis_dir}/${subj}_brain.nii
 
 
 
