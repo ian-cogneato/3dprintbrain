@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+# requires freesurfer to be installed already
+
+#export FREESURFER_HOME=/applications/freesurfer
+#source $FREESURFER_HOME/setupfreesurfer.sh
+
 # Replace the path below with your local path to the directory where 
 # you have the tools installed, or where you want to clone them to.
 export APPS_DIR=/volumes/lighthall_lab/apps
