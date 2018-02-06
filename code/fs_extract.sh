@@ -4,6 +4,8 @@
 # and generates more data than we need.
 
 # requires freesurfer to be installed already
+# requires sudo:
+#   $ sudo code/fs_extract.sh
 
 export FREESURFER_HOME=/applications/freesurfer
 source $FREESURFER_HOME/setupfreesurfer.sh
@@ -11,9 +13,12 @@ source $FREESURFER_HOME/setupfreesurfer.sh
 export CODE_DIR="${0%/*}"
 export SOURCE_DIR=$CODE_DIR/../sourcedata
 export DERIVS_DIR=$CODE_DIR/../derivatives
-export SUBJ=sub-0
+
+echo "Subject ID?"
+read -p "sub-" SUBJ
+export SUBJ=sub-$SUBJ
 
 recon-all \
-	-i $SOURCE_DIR/$SUBJ/${SUBJ}_t1w.nii \
+	-i $SOURCE_DIR/$SUBJ/anat/${SUBJ}_t1w.nii \
 	-s $DERIVS_DIR/$SUBJ \
 	-all
