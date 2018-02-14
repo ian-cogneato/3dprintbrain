@@ -8,7 +8,7 @@
 
 # Replace the path below with your local path to the directory where 
 # you have the tools installed, or where you want to clone them to.
-export APPS_DIR=/volumes/lighthall_lab/apps
+export APPS_DIR=~/d/apps
 
 # These are examples from our system
 # export APPS_DIR=//net1110.net.ucf.edu/research2/lighthall_lab/apps
@@ -18,7 +18,7 @@ export APPS_DIR=/volumes/lighthall_lab/apps
 # To fetch the tools from github:
 
 # MeshGeometry:
-git clone https://github.com/r03er0/meshgeometry $APPS_DIR/meshgeometry
+git clone https://github.com/r03ert0/meshgeometry $APPS_DIR/meshgeometry
 # VCGlib:
 git clone -b devel https://github.com/cnr-isti-vclab/vcglib $APPS_DIR/vcglib
 
