@@ -1,8 +1,9 @@
 #!/bin/bash
 
+export DOWNLOAD_DIR=~/d/downloads
 
-# requires freesurfer to be installed already
-
+# fetches the 'latest' (as of 2018-02-13) version of freesurfer
+wget ftp://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.0/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0.tar.gz
 #export FREESURFER_HOME=/applications/freesurfer
 #source $FREESURFER_HOME/setupfreesurfer.sh
 

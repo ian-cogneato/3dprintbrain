@@ -1,8 +1,12 @@
 #!/bin/bash
 
-echo test1
-echo test2
+echo $PWD
+pwd
 
+read -p "Press ENTER to continue"
 
-ls .
+cd ..
+pwd
+echo $PWD
+
 read -p "Press ENTER to continue"
