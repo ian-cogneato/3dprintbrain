@@ -1,15 +1,16 @@
 #!/bin/bash
 
 export DOWNLOAD_DIR=~/d/downloads
+export APPS_DIR=~/d/apps
+export FS_VERSION=6.0.0
+export FS_FILENAME=freesurfer-Linux-centos6_x86_64-stable-pub-v$FS_VERSION.tar.gz
 
 # fetches the 'latest' (as of 2018-02-13) version of freesurfer
-wget ftp://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.0/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0.tar.gz
-#export FREESURFER_HOME=/applications/freesurfer
-#source $FREESURFER_HOME/setupfreesurfer.sh
+wget ftp://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/$FS_VERSION/$FS_FILENAME
+sudo tar -C $APPS_DIR -xzvf freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0.tar.gz
 
-# Replace the path below with your local path to the directory where 
-# you have the tools installed, or where you want to clone them to.
-export APPS_DIR=~/d/apps
+export FREESURFER_HOME=$APPS_DIR/freesurfer
+source $FREESURFER_HOME/setupfreesurfer.sh
 
 # These are examples from our system
 # export APPS_DIR=//net1110.net.ucf.edu/research2/lighthall_lab/apps
@@ -20,7 +21,7 @@ export APPS_DIR=~/d/apps
 
 # MeshGeometry:
 git clone https://github.com/r03ert0/meshgeometry $APPS_DIR/meshgeometry
-# VCGlib:
+# VCGlib development branch:
 git clone -b devel https://github.com/cnr-isti-vclab/vcglib $APPS_DIR/vcglib
 
 # MeshLab shouldn't be cloned from git this way, it turns out.
