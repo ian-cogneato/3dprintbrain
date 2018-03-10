@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export DOWNLOAD_DIR=~/d/downloads
-export APPS_DIR=~/d/apps
+export DOWNLOAD_DIR=~/Downloads
+export APPS_DIR=~/Applications
 
 export FS_VERSION=6.0.0
 export FS_FILENAME=freesurfer-Linux-centos6_x86_64-stable-pub-v$FS_VERSION.tar.gz
